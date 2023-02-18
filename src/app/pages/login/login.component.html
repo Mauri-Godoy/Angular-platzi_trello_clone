@@ -1,5 +1,5 @@
-<div class="w-screen h-screen bg-gray-50 relative">
-  <div class="absolute w-full h-full md:visible invisible">
+<div class="w-screen h-screen sm:bg-gray-50 bg-white relative">
+  <div class="absolute w-full h-full lg:visible invisible">
     <img class="absolute w-96 left-0 bottom-0" src="/assets/svg/undraw_online_test_re_kyfx.svg" alt="background left">
     <img class="absolute w-96 right-0 bottom-0" src="../../../assets/svg/undraw_working_remotely_re_6b3a.svg"
       alt="background right">
@@ -8,7 +8,7 @@
     <header class="pt-6 pb-2 flex justify-center">
       <img class="h-24" src="../../../assets/logos/Trello/PNG@2x/logo-gradient-blue-trello.png" alt="">
     </header>
-    <div class="bg-white rounded shadow-lg py-6 px-8">
+    <div class="bg-white rounded sm:shadow-lg py-6 px-8">
       <h1 class="text-center font-bold text-gray-500 pt-4 pb-8">Iniciar sesión en Trello</h1>
       <form novalidate class="space-y-4">
         <div class="relative">
@@ -18,13 +18,17 @@
             class="w-full rounded bg-gray-100 border-2 border-gray-300 my-2">
         </div>
         <div>
-          <button type="submit" class="text-white bg-lime-600 w-full font-medium rounded text-sm
-          py-2 px-5">Continuar</button>
+          <app-btn [type]="'submit'">Continuar</app-btn>
         </div>
       </form>
+      <ul class="border-solid border-t-2 border-t-gray-300 mt-4 pt-4">
+        <li class="w-full text-center"> <a class="text-blue-500 text-sm">¿No puede iniciar sesión?</a></li>
+        <li class="w-full text-center"> <a class="text-blue-500 text-sm">Regístrese para crear una cuenta</a></li>
+      </ul>
     </div>
+
   </div>
-  <div class="relative mt-32 w-96 m-auto h-4 border-solid border-t-2 pt-8">
+  <div class="relative mt-32 w-96 m-auto h-4 border-solid border-t-2 border-t-gray-300 pt-8">
     <img class="h-7 m-auto"
       src="../../../assets/logos/Atlassian/Atlassian Logo Horizontal/PNG/horizontal-logo-gradient-blue-atlassian.png">
   </div>
