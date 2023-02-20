@@ -9,7 +9,7 @@ module.exports = {
       colors: {
         //con esto le ponemos un alias
         success: colors.lime,
-        primary: colors.blue
+        primary: colors.sky
       }
     },
   },
