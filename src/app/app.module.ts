@@ -7,9 +7,11 @@ import { LoginComponent } from './pages/login/login.component';
 import { BtnComponent } from './components/btn/btn.component';
 import { BoardsComponent } from './pages/boards/boards.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import {OverlayModule} from '@angular/cdk/overlay';
+import { OverlayModule } from '@angular/cdk/overlay';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import {CdkAccordionModule} from '@angular/cdk/accordion';
+import { CdkAccordionModule } from '@angular/cdk/accordion';
+import { BoardComponent } from './pages/board/board.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -17,14 +19,16 @@ import {CdkAccordionModule} from '@angular/cdk/accordion';
     LoginComponent,
     BtnComponent,
     BoardsComponent,
-    NavbarComponent
+    NavbarComponent,
+    BoardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     OverlayModule,
     FontAwesomeModule,
-    CdkAccordionModule
+    CdkAccordionModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]
