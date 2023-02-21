@@ -2,9 +2,11 @@
 <div class="container flex flex-wrap md:mt-12 md:mx-auto m-2 text-slate-900">
   <div class="md:w-3/12 w-full">
     <ul class="w-full gap-y-2  font-bold">
-      <li class="rounded bg-primary-100 text-primary-600 p-2 w-full"><fa-icon class="mr-2" [icon]="faBorderAll"></fa-icon> Boards
+      <li class="rounded bg-primary-100 text-primary-600 p-2 w-full"><fa-icon class="mr-2"
+          [icon]="faTrello"></fa-icon> Boards
       </li>
-      <li class="rounded p-2 w-full hover:bg-gray-100"><fa-icon class="mr-2" [icon]="faBorderAll"></fa-icon> Templates</li>
+      <li class="rounded p-2 w-full hover:bg-gray-100"><fa-icon class="mr-2" [icon]="faBorderAll"></fa-icon> Templates
+      </li>
       <li class="rounded p-2 w-full hover:bg-gray-100"><fa-icon class="mr-2" [icon]="faWaveSquare"></fa-icon> Home</li>
     </ul>
 
@@ -16,16 +18,40 @@
         <fa-icon [icon]="faPlus"></fa-icon>
       </h3>
 
-      <div class="p-2 rounded mt-2 hover:bg-gray-100 flex justify-between items-center">
-        <div class="flex items-center">
-          <img class="h-10 rounded-lg mr-1" src="../../../assets/logos/Trello/PNG@2x/icon-contained-gradient-blue-trello.png"
-            alt="icon-trello">
-          <h4 class="font-bold">
-            Nicolas Molina´s Workspace
-          </h4>
-        </div>
-        <fa-icon [icon]="faChevronDown"></fa-icon>
-      </div>
+      <cdk-accordion>
+        <cdk-accordion-item #accordionMenu="cdkAccordionItem">
+          <button (click)="accordionMenu.toggle()" type="button"
+            class="p-2 rounded mt-2 hover:bg-gray-100 flex justify-between items-center w-full">
+            <span class="flex items-center font-bold">
+              <img class="h-10 rounded-lg mr-1"
+                src="../../../assets/logos/Trello/PNG@2x/icon-contained-gradient-blue-trello.png" alt="icon-trello">
+              My Workspace
+            </span>
+            <fa-icon [icon]="accordionMenu.expanded ? faChevronUp : faChevronDown"></fa-icon>
+          </button>
+
+          <div [style.display]="accordionMenu.expanded ? '' : 'none'">
+            <ul class="ml-2 flex flex-col text-sm text-gray-700">
+              <li>
+                <a class="block py-1 px-3"><fa-icon [icon]="faTrello"></fa-icon> Boards</a>
+              </li>
+              <li>
+                <a class="block py-1 px-3"><fa-icon [icon]="faHeart"></fa-icon> Highlights</a>
+              </li>
+              <li>
+                <a class="block py-1 px-3"><fa-icon [icon]="faBorderAll"></fa-icon> Views</a>
+              </li>
+              <li>
+                <a class="block py-1 px-3"><fa-icon [icon]="faUsers"></fa-icon> Members</a>
+              </li>
+              <li>
+                <a class="block py-1 px-3"><fa-icon [icon]="faHammer"></fa-icon> Settings</a>
+              </li>
+            </ul>
+          </div>
+        </cdk-accordion-item>
+      </cdk-accordion>
+
     </div>
 
   </div>
@@ -47,9 +73,11 @@
       </div>
       <div class="bg-primary-600 rounded p-2 w-48 h-24">
         <h3 class="font-bold text-white">Demo</h3>
-      </div> <div class="bg-primary-600 rounded p-2 w-48 h-24">
+      </div>
+      <div class="bg-primary-600 rounded p-2 w-48 h-24">
         <h3 class="font-bold text-white">Demo</h3>
-      </div> <div class="bg-primary-600 rounded p-2 w-48 h-24">
+      </div>
+      <div class="bg-primary-600 rounded p-2 w-48 h-24">
         <h3 class="font-bold text-white">Demo</h3>
       </div>
     </div>

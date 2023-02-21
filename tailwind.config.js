@@ -11,7 +11,7 @@ module.exports = {
         success: colors.lime,
         primary: colors.sky
       },
-      // con tailwind.config se puede sobreescribir una una funcionalidad
+      // con tailwind.config se puede sobreescribir una utilidad
       container: {
         screens: {
           sm: '640px',
