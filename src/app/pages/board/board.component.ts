@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
-import { ToDo } from '../../models/todo.model';
+import { Column, ToDo } from '../../models/todo.model';
 
 @Component({
   selector: 'app-board',
@@ -47,6 +47,21 @@ export class BoardComponent implements OnInit {
     }
   ];
 
+  columns: Column[] = [
+    {
+      title: 'todo',
+      tasks: this.todos
+    },
+    {
+      title: 'doing',
+      tasks: this.doing
+    },
+    {
+      title: 'done',
+      tasks: this.done
+    }
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
@@ -64,4 +79,10 @@ export class BoardComponent implements OnInit {
       );
   }
 
+  addColumn() {
+    this.columns.push({
+      title: 'Nuevo',
+      tasks: []
+    })
+  }
 }
