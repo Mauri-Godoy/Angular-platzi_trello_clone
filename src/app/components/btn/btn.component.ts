@@ -20,7 +20,8 @@ export class BtnComponent implements OnInit {
     [
       ['success', 'bg-success-600 hover:bg-success-500 focus:ring-success-300'],
       ['primary', ' bg-primary-600 hover:bg-primary-500 focus:ring-primary-300'],
-      ['red', ' bg-red-600 hover:bg-red-500 focus:ring-red-300']
+      ['red', ' bg-red-600 hover:bg-red-500 focus:ring-red-300'],
+      ['gray-light', ' bg-gray-200 hover:bg-gray-100 focus:ring-gray-50 text-gray-800 text-left']
     ]
   )
 }

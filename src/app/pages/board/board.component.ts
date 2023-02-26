@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 import { Column, ToDo } from '../../models/todo.model';
+import { Dialog } from '@angular/cdk/dialog';
+import { TodoDialogComponent } from 'src/app/dialogs/todo-dialog/todo-dialog.component';
 
 @Component({
   selector: 'app-board',
@@ -20,7 +22,7 @@ import { Column, ToDo } from '../../models/todo.model';
     `
   ]
 })
-export class BoardComponent implements OnInit {
+export class BoardComponent {
 
   todos: ToDo[] = [
     {
@@ -62,9 +64,17 @@ export class BoardComponent implements OnInit {
     }
   ]
 
-  constructor() { }
+  constructor(private dialog: Dialog) { }
 
-  ngOnInit(): void {
+  openDialog() {
+    this.dialog.open(
+      TodoDialogComponent,
+      {
+        minWidth: '300px',
+        maxWidth: '50%',
+        autoFocus: false
+      }
+    )
   }
 
   drop(event: CdkDragDrop<any[]>) {
