@@ -66,15 +66,21 @@ export class BoardComponent {
 
   constructor(private dialog: Dialog) { }
 
-  openDialog() {
-    this.dialog.open(
+  openDialog(task: ToDo) {
+    const dialogRef = this.dialog.open(
       TodoDialogComponent,
       {
         minWidth: '300px',
         maxWidth: '50%',
-        autoFocus: false
+        data: {
+          task: task
+        }
       }
     )
+
+    dialogRef.closed.subscribe(output => {
+      console.log(output);
+    })
   }
 
   drop(event: CdkDragDrop<any[]>) {
