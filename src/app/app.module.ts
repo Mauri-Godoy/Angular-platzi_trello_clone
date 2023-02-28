@@ -14,6 +14,8 @@ import { BoardComponent } from './pages/board/board.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { TodoDialogComponent } from './dialogs/todo-dialog/todo-dialog.component';
 import {DialogModule} from '@angular/cdk/dialog';
+import { ScrollComponent } from './pages/scroll/scroll.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import {DialogModule} from '@angular/cdk/dialog';
     BoardsComponent,
     NavbarComponent,
     BoardComponent,
-    TodoDialogComponent
+    TodoDialogComponent,
+    ScrollComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,8 @@ import {DialogModule} from '@angular/cdk/dialog';
     FontAwesomeModule,
     CdkAccordionModule,
     DragDropModule,
-    DialogModule  ],
+    DialogModule,
+    HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
 })
