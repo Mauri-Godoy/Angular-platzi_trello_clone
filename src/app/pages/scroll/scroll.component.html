@@ -21,6 +21,20 @@
       </div>
       <div class="w-1/2 ">
         <h1 class="text-white">Lista B (Virtual scroll)</h1>
+        <cdk-virtual-scroll-viewport itemSize="50" class="h-64 w-full border bg-white rounded m-2">
+          <div *cdkVirtualFor="let item of products">
+            <img [src]="item.images[0]" class="h-20 object-cover object-center">
+            <div class="flex justify-between">
+              <div>
+                <h3 class="text-sm text-gray-700">
+                  {{item.title}}
+                </h3>
+                <p class="mt-1 text-sm text-gray-500">{{item.description}}</p>
+              </div>
+              <p class="text-sm font-medium text-gray-900">${{item.price}}</p>
+            </div>
+          </div>
+        </cdk-virtual-scroll-viewport>
       </div>
     </div>
   </div>
