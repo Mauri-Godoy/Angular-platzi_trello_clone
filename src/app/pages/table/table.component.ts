@@ -4,12 +4,13 @@ import { Product } from 'src/app/models/product.model';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
-  selector: 'app-scroll',
-  templateUrl: './scroll.component.html'
+  selector: 'app-table',
+  templateUrl: './table.component.html'
 })
-export class ScrollComponent implements OnInit {
+export class TableComponent implements OnInit {
 
   products: Product[] = [];
+  columns: string[] = ['id', 'title', 'price']
 
   constructor(private productService: ProductService) { }
 
@@ -18,5 +19,4 @@ export class ScrollComponent implements OnInit {
       res => this.products = res
     )
   }
-
 }

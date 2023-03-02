@@ -13,10 +13,12 @@ import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { BoardComponent } from './pages/board/board.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { TodoDialogComponent } from './dialogs/todo-dialog/todo-dialog.component';
-import {DialogModule} from '@angular/cdk/dialog';
+import { DialogModule } from '@angular/cdk/dialog';
 import { ScrollComponent } from './pages/scroll/scroll.component';
-import {HttpClientModule} from '@angular/common/http';
-import {ScrollingModule} from '@angular/cdk/scrolling';
+import { HttpClientModule } from '@angular/common/http';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { CdkTableModule } from '@angular/cdk/table';
+import { TableComponent } from './pages/table/table.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
     NavbarComponent,
     BoardComponent,
     TodoDialogComponent,
-    ScrollComponent
+    ScrollComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
     DragDropModule,
     DialogModule,
     HttpClientModule,
-    ScrollingModule],
+    ScrollingModule,
+    CdkTableModule],
   providers: [],
   bootstrap: [AppComponent]
 })
