@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product.model';
 import { ProductService } from 'src/app/services/product.service';
+import { DataSourceProduct } from './data-source';
 
 @Component({
   selector: 'app-table',
@@ -9,8 +10,8 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class TableComponent implements OnInit {
 
-  products: Product[] = [];
-  columns: string[] = ['id', 'title', 'price']
+  dataSource = new DataSourceProduct();
+  columns: string[] = ['id', 'title', 'price', 'actions']
   total = 0;
 
   constructor(private productService: ProductService) { }
@@ -18,9 +19,15 @@ export class TableComponent implements OnInit {
   ngOnInit(): void {
     this.productService.getAll().subscribe(
       res => {
-        this.products = res;
-        this.total = this.products.map(item => item.price).reduce((price, total) => price + total, 0)
+        this.dataSource.init(res);
+        this.total = this.dataSource.getTotal();
       }
     )
+  }
+
+  update(product: Product) {
+    this.dataSource.update(product.id, {
+      price: 20
+    })
   }
 }
