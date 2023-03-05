@@ -11,12 +11,16 @@ export class TableComponent implements OnInit {
 
   products: Product[] = [];
   columns: string[] = ['id', 'title', 'price']
+  total = 0;
 
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
     this.productService.getAll().subscribe(
-      res => this.products = res
+      res => {
+        this.products = res;
+        this.total = this.products.map(item => item.price).reduce((price, total) => price + total, 0)
+      }
     )
   }
 }
