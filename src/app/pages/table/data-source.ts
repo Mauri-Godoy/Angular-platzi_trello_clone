@@ -40,9 +40,9 @@ export class DataSourceProduct extends DataSource<Product> {
   find(query: string) {
     const res = this.originalData.filter(item => {
 
-      return item.title.toLowerCase().includes(query.toLowerCase())
-        || item?.id.toString().includes(query)
-        || item.price.toString().includes(query)
+      const word = `${item.title}-${item?.id}-${item.price}`
+
+      return word.toLowerCase().includes(query.toLowerCase())
     });
 
     this.data.next(res);
