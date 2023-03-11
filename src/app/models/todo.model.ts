@@ -5,5 +5,5 @@ export interface ToDo {
 
 export interface Column {
   title: string;
-  tasks: ToDo[];
+  todos: ToDo[];
 }

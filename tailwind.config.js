@@ -1,17 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 
-const colors = require('tailwindcss/colors')
+const colors = require('tailwindcss/colors');
 
 module.exports = {
-  content: { files: ["./src/**/*.{html,js,ts}"], relative: true, },
+  content: [
+    "./src/**/*.{html,ts}",
+  ],
   theme: {
     extend: {
       colors: {
-        //con esto le ponemos un alias
-        success: colors.lime,
-        primary: colors.sky
+        success: colors.green,
+        primary: colors.blue,
+        danger: colors.red,
       },
-      // con tailwind.config se puede sobreescribir una utilidad
       container: {
         screens: {
           sm: '640px',
@@ -19,11 +20,11 @@ module.exports = {
           lg: '1024px',
           xl: '1024px',
           '2xl': '1536px',
-        }
+        },
       }
     },
   },
   plugins: [
-    require('@tailwindcss/forms')
+    require('@tailwindcss/forms'),
   ],
 }
